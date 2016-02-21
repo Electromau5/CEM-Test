@@ -1,0 +1,9 @@
+<h1>Welcome to <%= @seller.sellername %>'s Store </h1>
+	<h2>This seller has <%= pluralize(@seller_listings.count, "product") if @seller_listings %> for sale</h2>
+		<% if logged_in? && current_seller.admin? %>
+			<%= link_to 'Delete this seller account', @seller, method: :delete, data: { confirm: "Are you sure?"} %>
+		<% end %>
+			<% if (logged_in? && current_seller == @seller) || (logged_in? && current_seller.admin) %>
+				<%= link_to 'Add', new_listing_path %>
+			<% end %> -->
+				<%= render 'listings/listing', obj: @seller_listings %>

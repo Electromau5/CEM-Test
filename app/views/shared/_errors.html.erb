@@ -1,0 +1,8 @@
+<% if obj.errors.any? %>
+	<%= pluralize(obj.errors.count, "error") %>
+		prevented this from from saving
+		<% obj.errors.full_messages.each do |msg| %>
+			<%= msg %>
+		<% end %>
+<% end %>
+

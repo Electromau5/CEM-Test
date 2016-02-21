@@ -1,0 +1,28 @@
+<h1 style="text-align:center">Edit My Listing</h1>
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<%= form_for @listing do |l| %>
+
+		    <%= l.label :name %>
+		    <%= l.text_field :name, class: 'form-control' %>
+
+			<%= l.label :description %>
+			<%= l.text_area :description, class: 'form-control' %>
+
+			<%= l.label :price %>
+			<%= l.text_field :price, class: 'form-control' %>
+
+			<%= l.label :condition %>
+			<%= l.text_field :condition, class: 'form-control' %>
+
+			<%= l.label :location %>
+			<%= l.text_field :location, class: 'form-control' %>
+
+			<%= l.label :image %>
+			<%= l.file_field :image, class: 'form-control' %><br />
+
+			<%= l.submit %>
+
+			<% end %>
+		</div>
+	</div>

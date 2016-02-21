@@ -1,0 +1,17 @@
+  <div class = "container-fluid">
+    <div class = "row">
+		<% obj.each do |listing| %>
+		  <div class = "col-xs-6 col-md-3">
+		    <div class = "thumbnail">
+             <%= link_to image_tag(listing.image.url(:medium)), listing %>
+			  <div class = "listing_name">
+			   <p><%= listing.name %></p>
+			 		<small>Seller: <%= link_to listing.seller.sellername,listing.seller if listing.seller %>
+			   		  Updated <%= time_ago_in_words(listing.updated_at) %></small>
+			   </div>
+		     </div>
+          </div>
+		<% end %>
+	</div>
+  </div>	  
+		
